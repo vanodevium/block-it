@@ -1,0 +1,84 @@
+.block-it {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+  background-color: #ffffff;
+  opacity: 0.5;
+  transition: opacity 0.25s;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  font-family:
+    "Red Hat Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+  animation-duration: 300ms;
+}
+
+.block-it.is-unblocking {
+  opacity: 0;
+}
+
+.block-it__spinner-wrapper {
+  position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  width: 50%;
+  height: 50%;
+  container: block-it-spinner / size;
+}
+
+.block-it__spinner-wrapper:after {
+  content: attr(data-block-it-text);
+  display: block;
+  max-width: 125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@container block-it-spinner (width < 115px) {
+  .block-it__spinner-wrapper:after {
+    font-size: 14px;
+  }
+}
+
+@container block-it-spinner (width < 60px) {
+  .block-it__spinner-wrapper:after {
+    display: none;
+  }
+}
+
+@keyframes block-it-loading {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+.block-it__spinner-wrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 transparent;
+  animation: block-it-loading 0.8s infinite;
+}

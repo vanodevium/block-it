@@ -1,0 +1,31 @@
+.block-it {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+  background-color: #000000;
+  color: #ffffff;
+  opacity: 0.5;
+  transition: opacity 0.25s;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  font-family:
+    "Red Hat Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+  animation-duration: 300ms;
+}
+
+.block-it.is-unblocking {
+  opacity: 0;
+}

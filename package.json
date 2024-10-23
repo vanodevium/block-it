@@ -1,0 +1,36 @@
+{
+  "name": "block-it",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "The simplest blockUI alternative",
+  "keywords": [
+    "block",
+    "ui",
+    "element"
+  ],
+  "homepage": "https://github.com/vanodevium/block-it#readme",
+  "bugs": {
+    "url": "https://github.com/vanodevium/block-it/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vanodevium/block-it.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vano Devium",
+    "email": "vano@devium.me",
+    "url": "https://devium.me"
+  },
+  "main": "block-it.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "4.24.0",
+    "rollup-copy-transform-css": "2.0.0",
+    "rollup-plugin-copy": "3.5.0",
+    "rollup-plugin-esbuild-minify": "1.1.2",
+    "rollup-plugin-filesize": "10.0.0"
+  }
+}
